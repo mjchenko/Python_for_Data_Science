@@ -10,9 +10,6 @@ from datetime import datetime
 
 from helpers import apology, login_required, lookup, usd
 
-# API_KEY
-#export API_KEY=pk_168905a2c3154b8a96a6b54a593dda7e
-
 # Configure application
 app = Flask(__name__)
 
