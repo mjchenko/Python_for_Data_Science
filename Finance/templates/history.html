@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+     <form action="/" method="post">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Shares</th>
+                <th>Transaction Price</th>
+                <th>Bought/Sold</th>
+                <th>Transaction Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+    {% for stock in user_stocks %}
+                <tr>
+                    <td>{{ stock.ticker }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.buy_sell }}</td>
+                    <td>{{ stock.time }}</td>
+                </tr>
+    {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+        </tbody>
+    </table>
+    </form>
+{% endblock %}

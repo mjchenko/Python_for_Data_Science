@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+    {% if Name %}
+    <table>
+        <thead name="thead">
+           <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Price per Share</th>
+                <th>Total Price</th>
+            </tr>
+         </thead>
+
+
+        <tbody>
+            <tr>
+                <td>{{ Name }}</td>
+                <td>{{ Symbol }}</td>
+                <td>{{ Price }}</td>
+                <td>{{ Total }}</td>
+            </tr>
+        </tbody>
+     </table>
+
+    <button class="btn btn-primary" type="submit">Confirm Purchase</button>
+    {% endif %}
+
+{% endblock %}

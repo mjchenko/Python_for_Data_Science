@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+     <form action="/" method="post">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Ticker</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for stock in user_stocks %}
+                <tr>
+                    <td>{{ stock.ticker }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ stock.price }}</td>
+                    <td>{{ stock.value }}</td>
+                </tr>
+    {% endfor %}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>CASH</td>
+                <td>{{ total_cash }}</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>Total Funds</td>
+                <td>{{ total_money }}</td>
+            </tr>
+        </tfoot>
+    </table>
+    </form>
+{% endblock %}
